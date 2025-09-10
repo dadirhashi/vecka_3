@@ -1,22 +1,34 @@
-﻿﻿## 📝 Pull Request Checklist
+﻿## 📝 Beskrivning
+Kort sammanfattning av vad denna PR gör och varför den behövs.
 
-- [ ] Jag har testat ändringarna lokalt
-- [ ] Koden följer projektets stilguide
-- [ ] Jag har uppdaterat relevant dokumentation
-- [ ] Jag har lagt till nödvändiga tester (om tillämpligt)
+## 🔗 Relaterade ärenden
+Länka till relevanta issues, t.ex. `Closes #123`.
 
-## 📌 Vad ändras?
+## 🛠 Ändringar
+Lista de viktigaste ändringarna i denna PR:
+- Ny funktion X
+- Fix för bug Y
+- Uppdaterad dokumentation
 
-Beskriv kortfattat vad denna PR gör. Vad är syftet med ändringen?
+## 🧪 Testning
+Beskriv hur ändringen har testats:
+- [ ] Enhetstester (`dotnet test`)
+- [ ] Integrationstester
+- [ ] Manuell testning
+- [ ] Annat: ___________
 
-## 🧪 Hur testas detta?
+## 📦 Bygg & CI
+- [ ] Projektet bygger utan fel med `dotnet build`
+- [ ] Alla tester passerar i CI
 
-Beskriv hur du har testat ändringarna. Vilka steg ska följas?
+## 📸 Skärmdumpar (om UI ändras)
+Lägg till före/efter-bilder eller GIFs.
 
-## 📷 Screenshots (om relevant)
+## ✅ Checklista
+- [ ] Koden följer projektets kodstandard
+- [ ] Alla tester passerar lokalt och i CI
+- [ ] Dokumentation uppdaterad vid behov
+- [ ] Inga känsliga uppgifter i kod eller PR-beskrivning
 
-Lägg till före/efter-bilder eller GIFs om UI har ändrats.
-
-## 📚 Relaterade issues
-
-Länka till eventuella relaterade GitHub-issues med `Closes #123`, `Fixes #456`, etc.
+## 📓 Övrigt
+Annan relevant information för granskare.
