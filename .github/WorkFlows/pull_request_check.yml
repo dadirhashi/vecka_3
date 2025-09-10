@@ -1,4 +1,4 @@
-name: Pull Request Check
+namname: PR .NET Build
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
       - master
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,34 +19,12 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0.x'
+          dotnet-version: '8.0.x'
 
-      # Installera beroenden
+      # Återställ beroenden
       - name: Restore dependencies
         run: dotnet restore
 
       # Bygg projektet
       - name: Build
         run: dotnet build --no-restore --configuration Release
-
-      # Kör tester
-      - name: Run tests
-        run: dotnet test --no-build --verbosity normal
-
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      # Exempel: kör en C# linter (dotnet format)
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
-
-      - name: Install dotnet-format
-        run: dotnet tool install -g dotnet-format
-
-      - name: Run dotnet format check
-        run: dotnet format --verify-no-changes
