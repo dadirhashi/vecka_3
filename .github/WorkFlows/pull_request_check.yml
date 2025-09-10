@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - main
-      - master
+     
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
 
     steps:
       # Checka ut koden
-      - name: Check out repository
+      - name: Check out code
         uses: actions/checkout@v4
 
       # Sätt upp .NET (ändra version vid behov)
