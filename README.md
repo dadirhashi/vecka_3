@@ -1,2 +1,2 @@
 # vecka_3
-dadir kungen som bor i svarige, hatar
+dadir kungen som bor i svarige, hatar snö
