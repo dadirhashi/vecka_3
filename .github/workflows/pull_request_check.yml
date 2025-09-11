@@ -27,3 +27,17 @@ jobs:
       # Bygg projektet
       - name: Build
         run: dotnet build --no-restore --configuration Release
+        
+
+      - name: Notify Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          PAYLOAD=$(jq -n \
+            --arg content "✅ Bygget lyckades för PR #${{ github.event.pull_request.number }} i ${{ github.repository }}. Se detaljer: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            '{content: $content}')
+
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "$PAYLOAD" \
+               "$DISCORD_WEBHOOK"
