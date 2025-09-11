@@ -32,6 +32,9 @@ jobs:
       - name: Notify Discord
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_MESSAGE: "✅ Bygget lyckades för PR #${{ github.event.pull_request.number }} i ${{ github.repository }}."
+          BOT_NAME: "Dadirs CI_bot 🤖"
+
         run: |
           PAYLOAD=$(jq -n \
             --arg content "✅ Bygget lyckades för PR #${{ github.event.pull_request.number }} i ${{ github.repository }}. Se detaljer: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
