@@ -1,0 +1,29 @@
+name:  PR .NET Build
+
+on:
+  pull_request:
+    branches: [ main ]
+     
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checka ut koden
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      # Sätt upp .NET (ändra version vid behov)
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      # Återställ beroenden
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # Bygg projektet
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
