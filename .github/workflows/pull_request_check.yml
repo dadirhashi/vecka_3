@@ -38,6 +38,7 @@ jobs:
         run: |
           PAYLOAD=$(jq -n \
             --arg content "✅ Bygget lyckades för PR #${{ github.event.pull_request.number }} i ${{ github.repository }}. Se detaljer: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --arg username "$Bot_Name" \
             '{username: $username, content: $content}')
 
           curl -H "Content-Type: application/json" \
