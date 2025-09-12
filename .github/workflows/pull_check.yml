@@ -1,0 +1,5 @@
+run: |
+  curl -H "Content-Type: application/json" \
+       -X POST \
+       -d '{"username": "TestBot", "content": "Detta är ett testmeddelande från GitHub Actions."}' \
+       "$DISCORD_WEBHOOK"
